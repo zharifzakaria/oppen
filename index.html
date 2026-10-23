@@ -246,7 +246,7 @@ h3.display{font-size:clamp(34px,4vw,48px)}
 
 /* About + FAQ */
 .about{display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding-bottom:0}
-.photo{flex:0 0 180px;height:180px;border-radius:50%;border:2px dashed var(--blue);display:flex;align-items:center;justify-content:center;color:var(--blue-text);font-weight:600;font-size:var(--s-1)}
+.photo{flex:0 0 180px;width:180px;height:180px;border-radius:50%}
 .about .stack{flex:1 1 420px;gap:12px}
 .about p:not(.label):not(.small){max-width:36em}
 
@@ -544,7 +544,7 @@ main.swapping{opacity:0}
 </section>
 
 <section id="about" aria-labelledby="about-title" class="wrap about">
-<div class="photo" role="img" aria-label="Photo placeholder" data-i18n="photo">[Photo]</div>
+<img class="photo" src="zharif.webp" alt="Zharif Zakaria" width="180" height="180">
 <div class="stack">
 <p class="label" data-i18n="aboutLabel">Who's behind Oppen</p>
 <h2 id="about-title" class="display" data-i18n="aboutTitle">Hi, I'm Zharif Zakaria.</h2>

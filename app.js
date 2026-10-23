@@ -66,7 +66,7 @@ var MS = {
   monthly: '6 bulan', yearly: 'Tahunan (2 bulan percuma)',
   terms: '<strong>Bayaran:</strong> Deposit 50% untuk mula setup, 50% bila app anda live. Pakej cloud dibayar sekurang-kurangnya 6 bulan awal. Domain dicaj pada harga kos, atau guna domain anda sendiri.',
   founding: '<strong>Klien perintis:</strong> 5 klien pertama kami dapat harga istimewa sebagai balasan testimoni ringkas. Tanya kami di WhatsApp.',
-  photo: '[Gambar]', aboutLabel: 'Siapa di sebalik Oppen', aboutTitle: 'Hai, saya Zharif Zakaria.',
+  aboutLabel: 'Siapa di sebalik Oppen', aboutTitle: 'Hai, saya Zharif Zakaria.',
   aboutBody: 'Saya bermula dalam bidang reka bentuk: pameran, produk dan penerbitan. Pada 2017 saya beralih ke pembangunan web, membina sistem PHP untuk universiti, agensi kerajaan dan pasukan penyelidik di Malaysia. Reka bentuk mengajar saya memikirkan orang yang menggunakannya. Kod mengajar saya memastikan ia tahan lasak.',
   aboutBody2: 'Oppen ialah cara saya membawa ketelitian yang sama kepada app yang dibina dengan AI, dari prototaip ke produksi. Bila anda WhatsApp Oppen, anda bercakap terus dengan saya.',
   aboutHobby: 'Di luar waktu kerja, saya suka mengotak-atik Raspberry Pi, Arduino, ESP32, LEGO Mindstorms EV3 dan micro:bit, serta bermain RPG solo dan board game. Saya suka dunia yang dibina dengan teliti, sama ada dalam permainan atau dalam kod.',
