@@ -269,4 +269,13 @@ if (!reduceMotion && matchMedia('(hover: hover) and (pointer: fine)').matches) {
     launch.style.setProperty('--my', 0);
   });
 }
+
+// Screenshot zoom follows the cursor (CSS only scales it for a real mouse).
+document.querySelectorAll('.zoom').forEach(function (z) {
+  z.addEventListener('pointermove', function (e) {
+    var r = z.getBoundingClientRect();
+    z.style.setProperty('--zx', (e.clientX - r.left) / r.width * 100 + '%');
+    z.style.setProperty('--zy', (e.clientY - r.top) / r.height * 100 + '%');
+  });
+});
 document.fonts && document.fonts.ready.then(moveThumb);
