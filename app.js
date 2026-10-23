@@ -47,7 +47,7 @@ var MS = {
   stat1: 'Pelajar menggunakannya', stat2: 'Modul dalam satu sistem', stat3: 'Sedia untuk', stat3v: 'Tablet',
   c2Label: 'Kajian kes: Anugerah pegawai penyelidik',
   c2Title: 'Laman anugerah dibina AI, disiapkan untuk penjurian.',
-  c2Lead: 'Sebuah NGO Malaysia membina laman pencalonan dengan AI untuk anugerah yang meraikan pegawai penyelidik negara. Borangnya berfungsi. Tapi mengurus lampiran setiap calon, dan memilih pemenang dengan adil, rupanya jauh lebih banyak kerja daripada yang dijangka.',
+  c2Lead: 'Malaysia Research Officer Society (MROS) membina laman pencalonan dengan AI untuk anugerah yang meraikan pegawai penyelidik negara. Borangnya berfungsi. Tapi mengurus lampiran setiap calon, dan memilih pemenang dengan adil, rupanya jauh lebih banyak kerja daripada yang dijangka.',
   c2Shot: 'Panel penilaian: pencalonan disusun ikut kategori anugerah dan markah, dengan pemenang ditanda',
   c2Proto: 'Borang pencalonan yang berfungsi, dibina dengan AI. Lampiran bertimbun tanpa cara mudah untuk disusun atau disemak, dan penganjur tiada paparan untuk mengurus atau menilai penyertaan.',
   c2p1: 'Masalah kecil dalam aliran pencalonan dibetulkan', c2p2: 'Lampiran disusun ikut calon, mudah dibuka dan disemak', c2p3: 'Paparan admin untuk mengurus setiap pencalonan',
