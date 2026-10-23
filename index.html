@@ -169,7 +169,6 @@ h3.display{font-size:clamp(34px,4vw,48px)}
 .case .display{font-size:clamp(36px,4.2vw,56px)}
 .case + .case{margin-top:clamp(72px,9vw,112px);padding-top:clamp(72px,9vw,112px);border-top:1px solid var(--line)}
 .case-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,64px);align-items:center}
-.shot{aspect-ratio:16/10;border:2px dashed var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;color:var(--blue-text);font-size:var(--s-1);font-weight:600}
 /* Zoom at cursor: JS sets --zx/--zy to the pointer position in % */
 .zoom{overflow:hidden;border-radius:10px;border:1px solid var(--line)}
 .zoom img{display:block;width:100%;height:auto;transform-origin:var(--zx,50%) var(--zy,50%);transition:transform .25s ease}
@@ -438,7 +437,7 @@ main.swapping{opacity:0}
 <h2 id="case-title" class="display" data-i18n="c1Title">Five prototypes. One platform for 200 students.</h2>
 <p class="lead" data-i18n="c1Lead">A Malaysian public university's School of Pharmaceutical Sciences wanted pharmacy students to practise clinical skills through guided case studies. The lecturer had already built each learning module as its own prototype. They worked, but they lived apart.</p>
 </div>
-<div class="shot grid-paper" role="img" aria-label="Screenshot placeholder" data-i18n="c1Shot">[Screenshot: a case-study module on tablet]</div>
+<div class="zoom"><img src="case-pharmacy.webp" width="1600" height="1000" loading="lazy" alt="Student views of the PharmCare Skills platform: dashboard, learning modules and step-by-step case studies" aria-label="Student views of the PharmCare Skills platform: dashboard, learning modules and step-by-step case studies" data-i18n-aria="c1Shot"></div>
 </div>
 <div class="compare">
 <div class="proto-side grid-paper">

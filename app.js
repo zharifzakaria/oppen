@@ -39,7 +39,7 @@ var MS = {
   c1Label: 'Kajian kes: Platform kemahiran farmasi',
   c1Title: 'Lima prototaip. Satu platform untuk 200 pelajar.',
   c1Lead: 'Pusat Pengajian Sains Farmasi di sebuah universiti awam Malaysia mahu pelajar farmasi berlatih kemahiran klinikal melalui kajian kes berpandu. Pensyarah sudah membina setiap modul pembelajaran sebagai prototaip tersendiri. Semuanya berfungsi, tapi berasingan.',
-  c1Shot: '[Tangkap layar: modul kajian kes di tablet]',
+  c1Shot: 'Paparan pelajar platform PharmCare Skills: papan pemuka, modul pembelajaran dan kajian kes langkah demi langkah',
   proto: 'Prototaip', prod: 'Produksi', proto2: 'Prototaip', prod2: 'Produksi',
   c1Proto: 'Prototaip modul berasingan dibina oleh pensyarah, setiap satu dengan rupa dan setup sendiri. Idea yang baik, sedia untuk disatukan.',
   c1p1: 'Kelima-lima modul disatukan dalam satu sistem yang ringkas, menggunakan library yang diselenggara dengan baik',
