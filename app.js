@@ -34,8 +34,8 @@ var MS = {
   fx6t: 'Pemantauan', fx6: 'Kalau app down, kami dapat amaran dan terus mula membaikinya.',
   proofTitle: 'Jangan percaya cakap kami saja.',
   proofLead: 'Laman ini berjalan atas setup yang sama kami beri kepada klien. Setiap angka di bawah datang dari alat awam. Tekan satu untuk uji sendiri.',
-  pr1: 'Uptime, 30 hari terakhir', pr2: 'Purata respons', pr3: 'Setup HTTPS', pr4: 'Header keselamatan', pr5: 'Skor keselamatan web', pr6: 'Kelajuan dan aksesibiliti', pr7: 'Penjejak dan cookies',
-  prOurs: 'Status page kami', prOurs2: 'Status page kami', grade1: 'B', grade2: '[gred]', grade3: 'A+', score: '[skor]', statusLive: 'Status langsung:',
+  pr1: 'Uptime sejak dilancarkan', pr1b: 'Uptime, 30 hari terakhir', pr2: 'Purata respons', pr3: 'Setup HTTPS', pr4: 'Header keselamatan', pr5: 'Skor keselamatan web', pr6: 'Kelajuan dan aksesibiliti', pr7: 'Penjejak dan cookies',
+  prOurs: 'Status page kami', prOurs2: 'Status page kami', grade1: 'B', grade2: 'A', grade3: 'A+', score: '93 / 95', statusLive: 'Status langsung:',
   c1Label: 'Kajian kes: Platform kemahiran farmasi',
   c1Title: 'Lima prototaip. Satu platform untuk 200 pelajar.',
   c1Lead: 'Pusat Pengajian Sains Farmasi di sebuah universiti awam Malaysia mahu pelajar farmasi berlatih kemahiran klinikal melalui kajian kes berpandu. Pensyarah sudah membina setiap modul pembelajaran sebagai prototaip tersendiri. Semuanya berfungsi, tapi berasingan.',
@@ -102,6 +102,7 @@ var TEXT = {
 var EN = { _title: document.title };
 document.querySelectorAll('[data-i18n]').forEach(function (el) { EN[el.dataset.i18n] = el.innerHTML; });
 document.querySelectorAll('[data-i18n-aria]').forEach(function (el) { EN[el.dataset.i18nAria] = el.getAttribute('aria-label'); });
+EN.pr1b = 'Uptime, last 30 days';
 
 var state = { lang: 'en', yearly: false };
 var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -227,6 +228,18 @@ document.querySelectorAll('[data-pick]').forEach(function (btn) {
 try { if (localStorage.getItem('lang') === 'ms') state.lang = 'ms'; } catch (e) {}
 render();
 addEventListener('resize', moveThumb);
+
+// Uptime tiles read the live status page. Until the monitor is 30 days old, its 30-day figure is the uptime since launch.
+fetch('https://stats.uptimerobot.com/api/getMonitor/ZTvfoCzikY?m=804391203').then(function (r) { return r.json(); }).then(function (j) {
+  var m = j.monitor, times = m.responseTimes.map(function (x) { return x.value; });
+  document.getElementById('up-ratio').textContent = +(+m['30dRatio'].ratio).toFixed(2) + '%';
+  if (times.length) document.getElementById('up-ms').textContent = Math.round(times.reduce(function (a, b) { return a + b; }) / times.length) + ' ms';
+  if (Date.now() - Date.parse(m.createdAt.replace(' ', 'T') + 'Z') > 30 * 864e5) {
+    var k = document.querySelector('[data-i18n="pr1"]');
+    k.dataset.i18n = 'pr1b';
+    k.innerHTML = (state.lang === 'ms' ? MS : EN).pr1b;
+  }
+}).catch(function () {});
 
 // Section headings rise into view once, as they scroll in.
 if (!reduceMotion && 'IntersectionObserver' in window) {
