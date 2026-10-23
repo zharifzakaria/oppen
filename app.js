@@ -38,7 +38,7 @@ var MS = {
   prOurs: 'Status page kami', prOurs2: 'Status page kami', grade1: 'B', grade2: 'A', grade3: 'A+', score: '93 / 95', statusLive: 'Status langsung:',
   c1Label: 'Kajian kes: Platform kemahiran farmasi',
   c1Title: 'Lima prototaip. Satu platform untuk 200 pelajar.',
-  c1Lead: 'Pusat Pengajian Sains Farmasi di sebuah universiti awam Malaysia mahu pelajar farmasi berlatih kemahiran klinikal melalui kajian kes berpandu. Pensyarah sudah membina setiap modul pembelajaran sebagai prototaip tersendiri. Semuanya berfungsi, tapi berasingan.',
+  c1Lead: 'Pusat Pengajian Sains Farmasi, Universiti Sains Malaysia (USM) mahu pelajar farmasi berlatih kemahiran klinikal melalui kajian kes berpandu. Pensyarah sudah membina setiap modul pembelajaran sebagai prototaip tersendiri. Semuanya berfungsi, tapi berasingan.',
   c1Shot: 'Paparan pelajar platform PharmCare Skills: papan pemuka, modul pembelajaran dan kajian kes langkah demi langkah',
   proto: 'Prototaip', prod: 'Produksi', proto2: 'Prototaip', prod2: 'Produksi',
   c1Proto: 'Prototaip modul berasingan dibina oleh pensyarah, setiap satu dengan rupa dan setup sendiri. Idea yang baik, sedia untuk disatukan.',
