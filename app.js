@@ -1,5 +1,5 @@
-// Set your WhatsApp number here (country code, digits only).
-var WHATSAPP = '60XXXXXXXXX';
+// WhatsApp number (country code, digits only), stored reversed so crawlers scanning the source don't find it.
+var WHATSAPP_REV = '48919129106';
 
 var MS = {
   _title: 'Oppen — App dibina AI, dari prototaip ke produksi',
@@ -106,7 +106,14 @@ document.querySelectorAll('[data-i18n-aria]').forEach(function (el) { EN[el.data
 var state = { lang: 'en', yearly: false };
 var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-function waLink(text) { return 'https://wa.me/' + WHATSAPP.replace(/\D/g, '') + '?text=' + encodeURIComponent(text); }
+function waLink(text) { return 'https://wa.me/' + WHATSAPP_REV.split('').reverse().join('') + '?text=' + encodeURIComponent(text); }
+// Links carry only their message; the real link is built when someone uses it, so the number never sits in the page.
+['click', 'auxclick', 'contextmenu'].forEach(function (type) {
+  document.addEventListener(type, function (e) {
+    var a = e.target.closest('a[data-msg]');
+    if (a) a.href = waLink(a.dataset.msg);
+  });
+});
 
 function render() {
   var t = TEXT[state.lang], dict = state.lang === 'ms' ? MS : EN;
@@ -121,7 +128,7 @@ function render() {
   document.querySelectorAll('[data-monthly]').forEach(function (el) { el.textContent = el.dataset.monthly * (state.yearly ? 10 : 1); });
   document.querySelectorAll('[data-unit]').forEach(function (el) { el.textContent = state.yearly ? t.year : t.month; });
 
-  document.querySelectorAll('[data-wa]').forEach(function (a) { a.href = waLink(t.general); });
+  document.querySelectorAll('[data-wa]').forEach(function (a) { a.href = 'https://wa.me/'; a.dataset.msg = t.general; });
   moveThumb();
   updateTotal();
 }
@@ -169,11 +176,13 @@ function updateTotal() {
   var cta = document.getElementById('sum-cta');
   document.getElementById('sum-hint').hidden = !!s;
   if (s) {
-    cta.href = waLink(t.plan(s.name + ' (' + s.price + ')', c && c.name.replace(/\)$/, ', ' + c.price + ')'), s.pre + total));
+    cta.href = 'https://wa.me/';
+    cta.dataset.msg = t.plan(s.name + ' (' + s.price + ')', c && c.name.replace(/\)$/, ', ' + c.price + ')'), s.pre + total);
     cta.removeAttribute('aria-disabled');
     cta.removeAttribute('tabindex');
   } else {
     cta.removeAttribute('href');
+    delete cta.dataset.msg;
     cta.setAttribute('aria-disabled', 'true');
     cta.setAttribute('tabindex', '-1');
   }
