@@ -3,309 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Oppen — AI-built apps, from prototype to production</title>
+<title data-i18n="_title">Oppen — AI-built apps, from prototype to production</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..800&family=Big+Shoulders+Display:wght@300..900&display=swap">
-<style>
-:root{
-  --head:'Big Shoulders Display',sans-serif;
-  --paper:#F6F5F1; --panel:#ECEAE3; --ink:#141414; --muted:#55534E; --line:#DEDBD3;
-  --blue:#D9381E; --blue-text:#B82E17; --blue-soft:rgba(20,20,20,.06); --green:#D9381E;
-  --on-ink:#F6F5F1; --on-ink-muted:#CFCCC4; --ink-line:#3A3936; --green-on-ink:#FF7A50; --blue-on-ink:#FF7A50;
-  --s-1:15px; --s0:18px; --s1:24px; --s2:32px; --s3:42px; --s4:56px;
-  --wrap:1200px; --gutter:clamp(16px,4vw,32px);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,system-ui,sans-serif;font-size:var(--s0);line-height:1.55}
-img,svg{display:block}
-a{color:inherit}
-a:hover{color:var(--blue)}
-:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
-.ink :focus-visible,.cta :focus-visible{outline-color:var(--on-ink)}
-h1,h2,h3,h4,p,ul,ol,dl,dd{margin:0}
-ul,ol{padding:0;list-style:none}
-[hidden]{display:none!important}
-
-.wrap{max-width:var(--wrap);margin:0 auto;padding:clamp(64px,9vw,112px) var(--gutter)}
-.ink{background:var(--ink);color:var(--on-ink)}
-.ink a:hover{color:var(--green-on-ink)}
-.panel{background:var(--panel)}
-
-/* Type */
-.display{font-weight:800;font-family:var(--head);line-height:1;text-transform:uppercase}
-h2.display{font-size:clamp(40px,5vw,64px);max-width:16em}
-h3.display{font-size:clamp(34px,4vw,48px)}
-.lead{font-size:clamp(19px,1.8vw,22px);max-width:36em;color:var(--muted)}
-.ink .lead{color:var(--on-ink-muted)}
-.small{font-size:var(--s-1);color:var(--muted)}
-.label{font-size:var(--s-1);font-weight:600;color:var(--muted)}
-.ink .label,.ink .small{color:var(--on-ink-muted)}
-.stack{display:flex;flex-direction:column;gap:20px}
-.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,80px);align-items:start}
-
-/* Outline = prototype, solid = production */
-.grid-paper{background-color:var(--paper);background-image:linear-gradient(var(--blue-soft) 1px,transparent 1px),linear-gradient(90deg,var(--blue-soft) 1px,transparent 1px);background-size:24px 24px}
-
-/* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:650;text-decoration:none;border:2px solid transparent;transition:background-color .15s,color .15s,border-color .15s}
-.btn svg{flex-shrink:0}
-.btn-live{background:var(--green);color:#fff}
-.btn-live:hover{background:#B82E17;color:#fff}
-.btn-line{border-color:var(--ink);color:var(--ink)}
-.btn-line:hover{background:var(--ink);color:var(--paper)}
-.btn-ink{background:var(--ink);color:var(--paper)}
-.btn-ink:hover{background:#000;color:#fff}
-
-/* Header */
-.site-head{border-bottom:1px solid var(--line)}
-.site-head nav{max-width:var(--wrap);margin:0 auto;padding:14px var(--gutter);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px}
-.logo{font-weight:900;font-family:var(--head);font-size:34px;letter-spacing:.04em;line-height:1;text-decoration:none;color:var(--ink)}
-.logo span{color:var(--green)}
-.nav-links{display:flex;flex-wrap:wrap;align-items:center;gap:4px 22px;font-size:var(--s-1);font-weight:550}
-.nav-links a:not(.btn){text-decoration:none;padding:12px 0}
-.lang{min-height:44px;padding:0 14px;border:1.5px solid var(--line);border-radius:999px;background:none;font:inherit;font-weight:650;color:var(--ink);cursor:pointer}
-.lang:hover{border-color:var(--ink)}
-.nav-links .btn{min-height:44px;padding:0 18px}
-
-/* Hero */
-.hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,6vw,72px);align-items:center;padding-top:clamp(48px,7vw,88px)}
-.hero h1{font-family:var(--head);font-weight:900;font-size:clamp(52px,7.6vw,100px);line-height:.92;letter-spacing:-.01em;text-transform:uppercase}
-.hero h1 span{display:block}
-.hero h1 .go-live{color:var(--green);-webkit-text-stroke:2px transparent;animation:go-live 1.1s cubic-bezier(.6,0,.2,1) .35s both}
-.hero .lead{margin-top:28px}
-.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-.hero .small{margin-top:16px}
-@keyframes go-live{
-  from{font-weight:300;color:transparent;-webkit-text-stroke-color:var(--blue)}
-  55%{color:transparent;-webkit-text-stroke-color:var(--blue)}
-  to{font-weight:900;color:var(--green);-webkit-text-stroke-color:transparent}
-}
-
-.launch{position:relative;min-height:540px;display:flex;justify-content:flex-end}
-.phone{width:262px;height:530px;border:10px solid var(--ink);border-radius:46px;background:var(--panel);padding:58px 20px 20px;display:flex;flex-direction:column}
-.apps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 12px}
-.apps span{aspect-ratio:1;border-radius:13px;background:#CFCBC1}
-.apps .target{background:var(--ink);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;color:var(--paper);font-weight:900;font-family:var(--head);font-size:17px;animation:land .6s cubic-bezier(.3,1.6,.5,1) 2.55s both}
-@keyframes land{
-  from{background:transparent;border:2px dashed var(--blue);color:transparent;transform:scale(1)}
-  60%{transform:scale(1.14)}
-  to{background:var(--ink);border:2px solid var(--ink);color:var(--paper);transform:scale(1)}
-}
-.toast{margin-top:auto;padding:14px;border-radius:16px;background:var(--paper);font-size:13px;line-height:1.4;animation:rise .45s ease-out 2.9s both}
-.toast b{display:block}
-.toast span{color:var(--muted)}
-@keyframes rise{from{opacity:0;transform:translateY(12px)}}
-
-.deploy{position:absolute;left:0;top:56px;width:288px;max-width:calc(100% - 40px);padding:18px 20px 20px;border-radius:10px;background:var(--paper);border:1.5px solid var(--ink);box-shadow:8px 8px 0 var(--ink);z-index:1}
-
-/* Pointer parallax: JS sets --mx/--my in -1..1; the card sits nearer than the phone */
-.launch{--mx:0;--my:0;perspective:1200px}
-.phone,.deploy{transition:transform .6s cubic-bezier(.2,.7,.2,1),box-shadow .6s cubic-bezier(.2,.7,.2,1)}
-.phone{transform:translate3d(calc(var(--mx) * -10px),calc(var(--my) * -8px),0) rotateY(calc(var(--mx) * 7deg)) rotateX(calc(var(--my) * -5deg))}
-.deploy{transform:translate3d(calc(var(--mx) * 22px),calc(var(--my) * 16px),0);box-shadow:calc(8px - var(--mx) * 6px) calc(8px - var(--my) * 6px) 0 var(--ink)}
-.deploy-head{display:flex;justify-content:space-between;align-items:center;gap:12px;font-weight:650;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--line)}
-.status{position:relative;display:inline-grid;font-size:13px;font-weight:700}
-.status span{grid-area:1/1;display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;white-space:nowrap}
-.st-proto{border:1.5px dashed var(--blue);color:var(--blue-text);animation:fade-out .25s ease 2.45s both}
-.st-live{background:var(--green);color:#fff;animation:fade-in .25s ease 2.45s both}
-.st-live::before{content:"";width:7px;height:7px;border-radius:50%;background:#fff}
-@keyframes fade-out{to{opacity:0}}
-@keyframes fade-in{from{opacity:0}}
-.deploy ul{display:flex;flex-direction:column;gap:9px;font-size:var(--s-1)}
-.deploy li{display:flex;align-items:center;gap:10px;animation:done-text .3s ease calc(.9s + var(--i) * .35s) both}
-.box{flex-shrink:0;width:20px;height:20px;border-radius:5px;background:var(--green);border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center;animation:done-box .3s ease calc(.9s + var(--i) * .35s) both}
-.box path{stroke-dasharray:20;stroke-dashoffset:0;animation:draw .3s ease calc(1s + var(--i) * .35s) both}
-@keyframes done-text{from{color:var(--blue-text)}}
-@keyframes done-box{from{background:transparent;border:1.5px dashed var(--blue)}}
-@keyframes draw{from{stroke-dashoffset:20}}
-
-/* Two P's: half blueprint, half production */
-.two-p{display:grid;grid-template-columns:1fr 1fr}
-.two-p > div{padding:clamp(48px,7vw,88px) var(--gutter);display:flex;flex-direction:column;gap:14px}
-.two-p .proto-side{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.two-p .inner{max-width:calc(var(--wrap) / 2 - var(--gutter));width:100%}
-.two-p .proto-side .inner{margin-left:auto}
-.big-p{font-weight:900;font-family:var(--head);font-size:clamp(96px,12vw,168px);line-height:.8}
-.proto-side .big-p{color:transparent;-webkit-text-stroke:2px var(--blue)}
-.prod-side .big-p{color:var(--green-on-ink)}
-.two-p h3{font-size:var(--s1);font-weight:700;margin-top:10px}
-.proto-side p{color:var(--muted);max-width:30em}
-.prod-side p{color:var(--on-ink-muted);max-width:30em}
-.why-head{padding-bottom:40px}
-
-/* Lists */
-.issues li{padding:22px 0;border-top:1px solid var(--line)}
-.issues li:last-child{border-bottom:1px solid var(--line)}
-.issues strong{display:block;font-weight:700;font-size:20px}
-.issues span{color:var(--muted)}
-
-.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px);margin-top:56px}
-.steps li{padding-top:24px;border-top:3px dashed var(--blue);display:flex;flex-direction:column;gap:10px}
-.steps li:last-child{border-top:3px solid var(--green)}
-.step-n{font-weight:900;font-family:var(--head);font-size:var(--s4);line-height:1;color:var(--blue)}
-.steps li:last-child .step-n{color:var(--green)}
-.steps h3{font-size:22px;font-weight:700}
-.steps p{color:var(--muted)}
-
-.fixes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px}
-.fixes li{display:grid;grid-template-columns:24px 1fr;gap:4px 14px}
-.fixes svg{grid-row:span 2;margin-top:3px;color:var(--green)}
-.fixes strong{font-weight:700}
-.fixes span{color:var(--muted);font-size:var(--s-1)}
-
-/* Proof */
-.proofs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));margin-top:48px;padding:1px 0 0 1px}
-.proofs li{display:flex;border:1px solid var(--ink-line);margin:-1px 0 0 -1px}
-.proofs a{flex-grow:1;display:flex;flex-direction:column;gap:8px;min-height:172px;padding:24px;background:var(--ink);text-decoration:none;color:var(--on-ink);transition:background-color .15s}
-.proofs a:hover{background:#1F1E1C;color:var(--on-ink)}
-.proofs .k{font-size:var(--s-1);color:var(--on-ink-muted)}
-.proofs .v{font-weight:900;font-family:var(--head);font-size:52px;line-height:1}
-.proofs .src{margin-top:auto;font-size:14px;font-weight:600;color:var(--green-on-ink);text-decoration:underline;text-underline-offset:3px}
-.status-line{margin-top:24px}
-
-/* Case studies */
-.case .display{font-size:clamp(36px,4.2vw,56px)}
-.case + .case{margin-top:clamp(72px,9vw,112px);padding-top:clamp(72px,9vw,112px);border-top:1px solid var(--line)}
-.case-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,64px);align-items:center}
-/* Zoom at cursor: JS sets --zx/--zy to the pointer position in % */
-.zoom{overflow:hidden;border-radius:10px;border:1px solid var(--line)}
-.zoom img{display:block;width:100%;height:auto;transform-origin:var(--zx,50%) var(--zy,50%);transition:transform .25s ease}
-@media (hover:hover) and (pointer:fine){
-  .zoom{cursor:zoom-in}
-  .zoom:hover img{transform:scale(2)}
-}
-.compare{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);margin-top:40px;border-radius:10px;overflow:hidden}
-.compare > div{padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:12px}
-.compare .proto-side{border:2px dashed var(--blue);border-right:0;border-radius:10px 0 0 10px}
-.compare h4{display:flex;align-items:baseline;gap:12px;font-size:22px;font-weight:700}
-.compare h4 b{font-weight:900;font-family:var(--head);font-size:44px;line-height:.8}
-.compare .proto-side h4 b{color:transparent;-webkit-text-stroke:1.5px var(--blue)}
-.compare .prod-side h4 b{color:var(--green-on-ink)}
-.compare .proto-side p{color:var(--muted)}
-.compare ul{display:flex;flex-direction:column;gap:8px;color:var(--on-ink-muted)}
-.compare li{display:grid;grid-template-columns:18px 1fr;gap:10px}
-.compare li svg{margin-top:4px;color:var(--green-on-ink)}
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:40px}
-.stats div{border-top:2px solid var(--ink);padding-top:16px}
-.stats dt{font-size:var(--s-1);color:var(--muted)}
-.stats dd{font-weight:900;font-family:var(--head);font-size:clamp(40px,6vw,72px);line-height:1;margin-top:4px}
-.case-note{margin-top:28px;font-size:20px;font-weight:700}
-.client{color:var(--blue-text);font-weight:650}
-
-/* Pricing */
-.wizard{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:20px;margin-top:48px;align-items:start}
-.wstep{min-width:0;margin:0;padding:clamp(22px,3vw,32px);border:1.5px solid var(--line);border-radius:10px;background:var(--paper);transition:opacity .3s}
-.wstep + .wstep{margin-top:16px}
-.wstep:disabled{opacity:.45}
-.wstep legend{float:left;width:100%;padding:0;display:flex;align-items:center;gap:14px;font-family:var(--head);font-weight:800;text-transform:uppercase;font-size:clamp(28px,3vw,38px);line-height:1}
-.wnum{flex-shrink:0;width:38px;height:38px;border-radius:50%;border:2px dashed var(--blue);color:var(--blue-text);display:inline-flex;align-items:center;justify-content:center;font-size:22px;transition:background-color .25s,color .25s,border-color .25s}
-.wstep.done .wnum{background:var(--green);border:2px solid var(--green);color:#fff}
-.wsub{clear:both;padding-top:10px;color:var(--muted);max-width:34em}
-.whead{clear:both;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px}
-.whead .wsub{padding-top:10px}
-.wopts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
-.wopt{position:relative;display:flex;flex-direction:column;gap:6px;padding:18px 18px 16px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);cursor:pointer;transition:border-color .15s,box-shadow .2s,transform .2s}
-.wopt input{position:absolute;opacity:0;pointer-events:none}
-.wopt::after{content:"";position:absolute;top:16px;right:16px;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--line);transition:background-color .15s,border-color .15s}
-.wopt:hover{border-color:var(--muted)}
-.wopt:has(input:checked){border-color:var(--ink);box-shadow:5px 5px 0 var(--ink);transform:translate(-2px,-2px)}
-.wopt:has(input:checked)::after{background:var(--green);border-color:var(--green);box-shadow:inset 0 0 0 3px var(--paper)}
-.wopt:has(input:focus-visible){outline:3px solid var(--blue);outline-offset:3px}
-.wstep:disabled .wopt,.wstep:disabled .wskip{cursor:not-allowed}
-.wopt b{font-size:17px;font-weight:700;padding-right:26px}
-.wopt .tag{font-size:14px;color:var(--muted)}
-.rec{display:none;margin-left:6px;padding:2px 8px;border-radius:999px;background:var(--panel);font-size:12px;font-weight:700;color:var(--blue-text);vertical-align:2px;white-space:nowrap}
-.wopt.fits .rec{display:inline-block}
-.wprice{margin-top:auto;padding-top:10px;display:flex;align-items:baseline;flex-wrap:wrap;gap:6px}
-.wprice .num{display:inline-block;font-family:var(--head);font-weight:900;font-size:42px;line-height:1}
-.pre,.unit{font-size:var(--s-1);color:var(--muted)}
-.wskip{display:inline-flex;align-items:center;min-height:44px;margin-top:16px;padding:0 20px;border:1.5px dashed var(--muted);border-radius:999px;font-size:var(--s-1);font-weight:650;cursor:pointer;transition:background-color .15s,color .15s,border-color .15s}
-.wskip input{position:absolute;opacity:0;pointer-events:none}
-.wskip:has(input:checked){background:var(--ink);border:1.5px solid var(--ink);color:var(--paper)}
-.wskip:has(input:focus-visible){outline:3px solid var(--blue);outline-offset:3px}
-
-.summary{position:sticky;top:24px;border-radius:10px;padding:28px;display:flex;flex-direction:column;gap:18px}
-.summary h3{font-family:var(--head);font-weight:800;text-transform:uppercase;font-size:32px;line-height:1}
-.sum-lines{border-top:1px solid var(--ink-line)}
-.sum-lines div{display:grid;grid-template-columns:70px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--ink-line);font-size:var(--s-1)}
-.sum-lines dt{color:var(--on-ink-muted)}
-.sum-lines dd{display:flex;justify-content:space-between;gap:12px;text-align:right}
-.sum-lines dd span:first-child{text-align:left;font-weight:600}
-.sum-lines dd.empty{color:var(--on-ink-muted);font-style:italic}
-.sum-total{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px}
-.sum-total .num{display:inline-block;font-family:var(--head);font-weight:900;font-size:72px;line-height:.9}
-.summary .pre,.summary .unit{color:var(--on-ink-muted)}
-#sum-cta{width:100%;padding:0 16px;font-size:16px}
-#sum-cta[aria-disabled="true"]{opacity:.4;pointer-events:none}
-
-.billing{position:relative;display:inline-flex;padding:4px;border-radius:999px;background:var(--paper);border:1.5px solid var(--line)}
-.billing::before{content:"";position:absolute;top:4px;bottom:4px;left:var(--thumb-x,4px);width:var(--thumb-w,0);border-radius:999px;background:var(--ink);transition:left .25s cubic-bezier(.4,0,.2,1),width .25s cubic-bezier(.4,0,.2,1)}
-.billing button{position:relative;min-height:44px;padding:0 18px;border:0;border-radius:999px;background:none;font:inherit;font-size:var(--s-1);font-weight:600;color:var(--muted);cursor:pointer;transition:color .2s}
-.billing button[aria-pressed="true"]{color:var(--paper)}
-.price-notes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;font-size:var(--s-1)}
-.price-notes p{padding:22px 24px;border-radius:10px}
-.price-notes .terms{border:1.5px dashed var(--muted);color:var(--muted)}
-.price-notes .founding{background:var(--green);color:#fff}
-.price-notes strong{color:var(--ink);font-weight:700}
-.price-notes .founding strong{color:#fff}
-
-/* About + FAQ */
-.about{display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding-bottom:0}
-.photo{flex:0 0 180px;width:180px;height:180px;border-radius:50%}
-.about .stack{flex:1 1 420px;gap:12px}
-.about p:not(.label):not(.small){max-width:36em}
-
-.faq{border-top:1px solid var(--line)}
-.faq details{border-bottom:1px solid var(--line)}
-.faq summary{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-weight:700;font-size:20px;cursor:pointer;list-style:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary svg{flex-shrink:0;transition:transform .25s ease;color:var(--blue)}
-.faq details[open] summary svg{transform:rotate(45deg)}
-.faq details p{padding:0 0 24px;color:var(--muted);max-width:40em}
-.faq details::details-content{block-size:0;overflow:hidden;transition:block-size .3s ease,content-visibility .3s allow-discrete}
-.faq details[open]::details-content{block-size:auto}
-:root{interpolate-size:allow-keywords}
-
-/* CTA + footer */
-.cta{background:var(--green);color:#fff}
-.cta .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:32px}
-.cta h2{font-weight:900;font-family:var(--head);font-size:clamp(48px,7vw,96px);line-height:.92;text-transform:uppercase;flex:1 1 520px}
-.cta .btn-ink:hover{color:#fff}
-.site-foot{max-width:var(--wrap);margin:0 auto;padding:28px var(--gutter);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted)}
-.site-foot .logo{font-size:18px;margin-right:8px}
-
-/* Heading reveal: JS adds .reveal only when motion is allowed, so headings never stay hidden without it */
-.reveal{opacity:0;transform:translateY(.3em);clip-path:inset(0 0 100% 0);transition:opacity .6s ease,transform .8s cubic-bezier(.2,.7,.2,1),clip-path .8s cubic-bezier(.2,.7,.2,1)}
-.reveal.in{opacity:1;transform:none;clip-path:inset(-.2em -.2em -.2em -.2em)}
-
-main{transition:opacity .15s}
-main.swapping{opacity:0}
-
-@media (max-width:900px){
-  .hero,.split,.case-intro{grid-template-columns:1fr}
-  .launch{justify-content:center;min-height:0}
-  .deploy{left:max(0px,calc(50% - 280px))}
-  .two-p{grid-template-columns:1fr}
-  .two-p .inner{max-width:none}
-  .steps,.wizard{grid-template-columns:1fr}
-  .summary{position:static}
-}
-@media (max-width:640px){
-  .fixes,.stats,.compare,.price-notes{grid-template-columns:1fr}
-  .compare .proto-side{border-right:2px dashed var(--blue);border-bottom:0;border-radius:10px 10px 0 0}
-  .deploy{position:relative;top:0;left:0;max-width:none;width:100%;margin-bottom:-40px}
-  .launch{flex-direction:column;align-items:center}
-  .phone{height:auto;min-height:420px}
-  .stats{gap:0}
-  .wopts{grid-template-columns:1fr}
-}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="site-head">
@@ -330,9 +32,7 @@ main.swapping{opacity:0}
 <h1><span data-i18n="h1a">AI built it.</span><span class="go-live" data-i18n="h1b">We take it live.</span></h1>
 <p class="lead" data-i18n="heroLead">Oppen takes an app you built with AI from prototype to production: online on its own link, and on your phone's home screen. We make it safe to run, then keep it running.</p>
 <div class="hero-cta">
-<a class="btn btn-live" data-wa="general" href="https://wa.me/" target="_blank" rel="noopener">
-<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
-<span data-i18n="heroCta">Send us your app on WhatsApp</span></a>
+<a class="btn btn-live" href="#paths" data-i18n="heroCta">Find where to start ↓</a>
 <a class="btn btn-line" href="#pricing" data-i18n="heroPrices">See prices</a>
 </div>
 <p class="small" data-i18n="heroNote">Setup from RM199. Hosting from RM39 a month. No Play Store needed.</p>
@@ -355,33 +55,22 @@ main.swapping{opacity:0}
 </div>
 </section>
 
-<section aria-labelledby="pp-title">
-<div class="wrap why-head" style="padding-top:0"><h2 id="pp-title" class="display" data-i18n="ppTitle">Why two P's?</h2></div>
-<div class="two-p">
-<div class="proto-side grid-paper"><div class="inner stack">
-<div class="big-p" aria-hidden="true">P</div>
-<h3 data-i18n="pp1t">is for Prototype</h3>
-<p data-i18n="pp1">What you have now: an app built with AI that already works. That's real progress, and we keep it. Your idea, your screens and your flow stay yours.</p>
-</div></div>
-<div class="prod-side ink"><div class="inner stack">
-<div class="big-p" aria-hidden="true">P</div>
-<h3 data-i18n="pp2t">is for Production</h3>
-<p data-i18n="pp2">What it becomes: live on its own link, secure, backed up and installable on any phone, with monitoring that alerts us if it goes down.</p>
-</div></div>
+<section id="paths" aria-labelledby="path-title" class="wrap" style="padding-top:0">
+<h2 id="path-title" class="display" data-i18n="pathTitle">Where is your app now?</h2>
+<div class="paths">
+<a class="path-card" href="launch.html">
+<span class="label" data-i18n="pathAk">It works</span>
+<h3 data-i18n="pathAt">My app works. I want other people to use it.</h3>
+<p data-i18n="pathA">It runs on your laptop or in preview. We put it online on its own link, make it safe, and keep it running.</p>
+<span class="path-go" data-i18n="pathAgo">Take my app live →</span>
+</a>
+<a class="path-card" href="fix.html">
+<span class="label" data-i18n="pathBk">It's stuck</span>
+<h3 data-i18n="pathBt">My app won't work online.</h3>
+<p data-i18n="pathB">Deployment fails, the database won't connect, or every fix brings a new error. We find what's blocking it and get it running.</p>
+<span class="path-go" data-i18n="pathBgo">Get my app unstuck →</span>
+</a>
 </div>
-</section>
-
-<section aria-labelledby="who-title" class="wrap split">
-<div class="stack">
-<h2 id="who-title" class="display" data-i18n="whoTitle">The prototype works. Now what?</h2>
-<p class="lead" data-i18n="whoLead">The idea is real and the prototype runs. Oppen is for the next step: turning it into something people can use every day.</p>
-</div>
-<ul class="issues">
-<li data-i18n="is1"><strong>There's no clear place to host it.</strong><span>The code exists, but nobody planned where it should live.</span></li>
-<li data-i18n="is2"><strong>Cheap hosting won't run it.</strong><span>Most budget plans are made for websites, not apps with a database behind them.</span></li>
-<li data-i18n="is3"><strong>You want it on your phone.</strong><span>You, your staff or your customers should open it with one tap.</span></li>
-<li data-i18n="is4"><strong>It holds people's data.</strong><span>Names, phone numbers, orders. Under Malaysia's PDPA, a leak is your problem.</span></li>
-</ul>
 </section>
 
 <section id="how" aria-labelledby="how-title" class="panel">
@@ -393,21 +82,6 @@ main.swapping{opacity:0}
 <li><span class="step-n" aria-hidden="true">3</span><h3 data-i18n="st3t">Open it on your phone</h3><p data-i18n="st3">You get your live link and a home-screen icon. We keep it running every month, so you can focus on your business.</p></li>
 </ol>
 </div>
-</section>
-
-<section aria-labelledby="fix-title" class="wrap split">
-<div class="stack">
-<h2 id="fix-title" class="display" data-i18n="fixTitle">We don't replace your app. We back it up.</h2>
-<p class="lead" data-i18n="fixLead">AI is great at building. It is less careful about the boring parts that keep an app safe once people use it. Those parts are our job.</p>
-</div>
-<ul class="fixes">
-<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><strong data-i18n="fx1t">Secrets out of the code</strong><span data-i18n="fx1">Passwords and API keys stored safely, not in files anyone can read.</span></li>
-<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><strong data-i18n="fx2t">HTTPS everywhere</strong><span data-i18n="fx2">The padlock in the browser, on your own domain.</span></li>
-<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><strong data-i18n="fx3t">Login checks</strong><span data-i18n="fx3">Only the right people see the right data.</span></li>
-<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><strong data-i18n="fx4t">Backups</strong><span data-i18n="fx4">Your database copied every day, so a bad day isn't a lost business.</span></li>
-<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><strong data-i18n="fx5t">PDPA basics</strong><span data-i18n="fx5">A privacy notice and sensible data handling from day one.</span></li>
-<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><strong data-i18n="fx6t">Monitoring</strong><span data-i18n="fx6">If the app goes down, we get an alert and start fixing it.</span></li>
-</ul>
 </section>
 
 <section id="proof" aria-labelledby="proof-title" class="ink">
@@ -503,7 +177,14 @@ main.swapping{opacity:0}
 <div class="wsteps">
 <fieldset class="wstep" id="w-setup">
 <legend><span class="wnum" aria-hidden="true">1</span><span data-i18n="w1Title">Set up your app</span></legend>
-<p class="wsub" data-i18n="w1Sub">We get it running on your computer. It starts by itself when you switch the computer on.</p>
+<p class="wsub" data-i18n="w1Sub">We get it running properly and make it safe to use. On its own, it runs on your computer and starts by itself when you switch it on.</p>
+<div class="wq" role="group" aria-labelledby="wq-title">
+<p id="wq-title" class="label" data-i18n="wqTitle">Not sure which? Tick what your app does. If none apply, a simple app fits.</p>
+<label class="wskip"><input type="checkbox" name="does" value="1"><span data-i18n="wq1">Saves bookings, orders or sign-ups</span></label>
+<label class="wskip"><input type="checkbox" name="does" value="1"><span data-i18n="wq2">People log in</span></label>
+<label class="wskip"><input type="checkbox" name="does" value="2"><span data-i18n="wq3">Takes payments or sensitive data</span></label>
+<label class="wskip"><input type="checkbox" name="does" value="2"><span data-i18n="wq4">My business stops if it's down</span></label>
+</div>
 <div class="wopts">
 <label class="wopt"><input type="radio" name="setup" value="0" data-price="199"><b data-i18n="cp1">Simple app</b><span class="tag" data-i18n="lp1t">HTML or JavaScript</span><span class="wprice"><span class="pre">RM</span><span class="num">199</span><span class="unit" data-i18n="locUnit">one-off</span></span></label>
 <label class="wopt"><input type="radio" name="setup" value="1" data-price="499"><b data-i18n="cp2">App with a database</b><span class="tag" data-i18n="lp2t">Node, Python or PHP, with data</span><span class="wprice"><span class="pre">RM</span><span class="num">499</span><span class="unit" data-i18n="locUnit">one-off</span></span></label>
@@ -514,7 +195,7 @@ main.swapping{opacity:0}
 <fieldset class="wstep" id="w-cloud" disabled>
 <legend><span class="wnum" aria-hidden="true">2</span><span data-i18n="w2Title">Put it in the cloud?</span></legend>
 <div class="whead">
-<p class="wsub" data-i18n="w2Sub">Runs on our server all day, so you can open it from anywhere. Billed at least 6 months ahead.</p>
+<p class="wsub" data-i18n="w2Sub">Needed if other people will use it. Runs on our server all day, so anyone can open it from anywhere. Billed at least 6 months ahead.</p>
 <div class="billing" role="group" aria-label="Billing period" data-i18n-aria="billingAria">
 <button type="button" data-pick="monthly" aria-pressed="true" data-i18n="monthly">6 months</button>
 <button type="button" data-pick="yearly" aria-pressed="false" data-i18n="yearly">Yearly (2 months free)</button>
@@ -525,7 +206,7 @@ main.swapping{opacity:0}
 <label class="wopt"><input type="radio" name="cloud" value="1"><b>Care <span class="rec" data-i18n="rec">Fits your app</span></b><span class="tag" data-i18n="ht2">Adds daily backups and 1 change a month</span><span class="wprice"><span class="pre">RM</span><span class="num" data-monthly="89">89</span><span class="unit" data-unit>a month</span></span></label>
 <label class="wopt"><input type="radio" name="cloud" value="2"><b>Care Plus <span class="rec" data-i18n="rec">Fits your app</span></b><span class="tag" data-i18n="ht3">Adds 4-hour replies and 3 changes a month</span><span class="wprice"><span class="pre">RM</span><span class="num" data-monthly="199">199</span><span class="unit" data-unit>a month</span></span></label>
 </div>
-<label class="wskip"><input type="checkbox" id="w-skip" value="skip"><span data-i18n="wSkip">Skip, keep it on my computer only</span></label>
+<label class="wskip"><input type="checkbox" id="w-skip" value="skip"><span data-i18n="wSkip">Skip, only I'll use it, on my computer</span></label>
 </fieldset>
 </div>
 
@@ -557,6 +238,7 @@ main.swapping{opacity:0}
 <h2 id="about-title" class="display" data-i18n="aboutTitle">Hi, I'm Zharif Zakaria.</h2>
 <p data-i18n="aboutBody">I started out in design: exhibitions, products and publications. In 2017 I moved into web development, building PHP systems for universities, government agencies and research teams in Malaysia. Design taught me to think about the person using the thing. Code taught me to make it hold up.</p>
 <p data-i18n="aboutBody2">Oppen is how I bring that same care to apps built with AI, from prototype to production. When you WhatsApp Oppen, you talk to me.</p>
+<p data-i18n="aboutName">Why two P's? One for Prototype, what you have now. One for Production, what it becomes.</p>
 <p data-i18n="aboutHobby">Off the clock, I tinker with Raspberry Pi, Arduino, ESP32, LEGO Mindstorms EV3 and micro:bit, and play solo RPGs and board games. I love a well-built world, in a game or in a codebase.</p>
 <p class="small" data-i18n="ssm">Registered business: TSA 42 ENTERPRISE (PG0418796-U)</p>
 </div>
@@ -578,7 +260,7 @@ main.swapping{opacity:0}
 
 <section aria-labelledby="cta-title" class="cta">
 <div class="wrap">
-<h2 id="cta-title" data-i18n="ctaTitle">Your app is ready.<br>Let's take it live.</h2>
+<h2 id="cta-title" data-i18n="ctaTitle">Not sure where you fit?<br>Just ask.</h2>
 <a class="btn btn-ink" data-wa="general" href="https://wa.me/" target="_blank" rel="noopener" style="min-height:58px;padding:0 30px;font-size:19px">
 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
 <span data-i18n="ctaBtn">Chat with us on WhatsApp</span></a>
