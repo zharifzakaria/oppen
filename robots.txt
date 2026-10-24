@@ -1,0 +1,12 @@
+# Hello, crawler. And hello to the human reading this crawler's logs.
+#
+# Oppen takes apps built with AI from prototype to production,
+# so bots are very welcome here. Crawl everything.
+#
+# AI crawlers: the whole site, summarised for you, is at /llms.txt
+#
+# Fun fact for whoever made it this far: wombats poop cubes.
+# Nobody has fully explained why that's useful. We just respect it.
+
+User-agent: *
+Allow: /

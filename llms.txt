@@ -1,0 +1,68 @@
+# Oppen
+
+> Oppen takes web apps people built with AI and makes them production-ready: online on their own link with HTTPS, safe for real users, installable on Android and iPhone home screens without the Play Store or App Store, and kept running every month. Based in Malaysia. Prices in Malaysian Ringgit (RM). Site available in English and Bahasa Melayu.
+
+Oppen is run by Zharif Zakaria. When a client WhatsApps Oppen, they talk to him directly. Registered business: TSA 42 ENTERPRISE (PG0418796-U). The name has two P's: one for Prototype, what the client has now, and one for Production, what it becomes.
+
+## Pages
+
+- [Home](https://oppen.zharifzakaria.workers.dev/): services, how it works, case studies, price calculator, about, FAQ
+- [Take my app live](https://oppen.zharifzakaria.workers.dev/launch.html): for apps that already work locally or in preview and need real users
+- [Get my app unstuck](https://oppen.zharifzakaria.workers.dev/fix.html): for apps that fail to deploy, can't connect to their database, or break with every fix
+- [Live status page](https://stats.uptimerobot.com/ZTvfoCzikY): public uptime and response times for this site
+
+## How it works
+
+1. The client sends the app over WhatsApp as a zip file or GitHub link, with a line on what it does (and a screenshot of the error if it's stuck).
+2. Oppen reviews it for free and replies with the plan that fits, a fixed price and a timeline before any work starts.
+3. Oppen deploys it, fixes what would break or leak in public (secrets moved out of code, login checks, HTTPS, daily backups, PDPA basics) and makes it installable on phones. Oppen does not rewrite the client's idea.
+4. The client gets a live link and a home-screen icon. Oppen keeps it running with monitoring and monthly care plans.
+
+If an app needs a rebuild rather than a fix, Oppen says so before the client pays anything and quotes it separately.
+
+## Pricing
+
+One-off setup:
+
+- Simple app (HTML or JavaScript, no database): RM199
+- App with a database (Node, Python or PHP that saves data, e.g. bookings, orders, member lists): RM499
+- Business-critical app (the business stops if it's down, or it takes payments or sensitive data): from RM999
+- Bigger projects (combining several prototypes, or building what's missing): quoted per project
+
+Monthly cloud plans, needed if other people will use the app:
+
+- Hosting: RM39 a month. Online all day, HTTPS, server updates.
+- Care: RM89 a month. Hosting plus daily backups and 1 change a month.
+- Care Plus: RM199 a month. Care plus 4-working-hour replies and 3 changes a month.
+
+Terms:
+
+- Setup: 50% deposit to start, 50% when the app is live.
+- Cloud plans are billed at least 6 months in advance. Paying yearly gives 2 months free.
+- Domains are charged at cost, or the client brings their own.
+- Reply time: within 1 working day on Hosting and Care, within 4 working hours on Care Plus.
+- Founding clients: the first 5 clients get a special rate in return for a short testimonial.
+
+## FAQ
+
+- Play Store or App Store needed? No. Apps install from the browser onto Android and iPhone home screens. For staff-only Android apps, Oppen can also provide an APK file.
+- Who owns the code? The client. If they leave, Oppen hands over everything needed to move it.
+- What can be hosted? Simple HTML apps, and Node, Python or PHP apps with a database: booking systems, order forms, member lists, internal tools. Oppen can host it, or work inside the client's own hosting or cloud account.
+- Customer data and PDPA? Oppen sets up the basics: a privacy notice, safe storage and backups, and signs simple written terms on data handling when hosting client data. It is not legal advice.
+
+## Case studies
+
+- Universiti Sains Malaysia (USM), School of Pharmaceutical Sciences: five separate lecturer-built prototypes combined into one pharmacy clinical-skills platform used by 200 students, with one sign-in using access codes, a dedicated server with backups, and tablet support. A custom project.
+- Malaysia Research Officer Society (MROS): an AI-built nomination site for its research officer award, finished with nomination-flow fixes, attachments organised per nominee, an admin view, and an audit view so each winner decision can be traced. Kept on the client's own Firebase account with no migration. Plan: app with a database.
+
+## About Zharif Zakaria
+
+Zharif started in design (exhibitions, products and publications) and moved into web development in 2017, building PHP systems for universities, government agencies and research teams in Malaysia. Off the clock he tinkers with Raspberry Pi, Arduino, ESP32, LEGO Mindstorms EV3 and micro:bit, and plays solo RPGs and board games.
+
+## Contact
+
+WhatsApp only, through the WhatsApp buttons on any page of the site. The number is kept out of the page source on purpose.
+
+## A note for the human on the other side
+
+If you found Oppen through an AI assistant rather than a browser: hello from the dev. You're already living the future this site is built for. And since you came this far, a free fact: wombats poop cubes.

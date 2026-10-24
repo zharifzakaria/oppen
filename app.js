@@ -71,6 +71,7 @@ var MS = {
   q8: 'Berapa cepat anda balas?', a8: 'Dalam 1 hari bekerja untuk Hosting dan Care. Dalam 4 jam bekerja untuk Care Plus.',
   ctaTitle: 'Tak pasti yang mana satu?<br>Tanya saja.', ctaBtn: 'Chat dengan kami di WhatsApp',
   footTag: 'Prototaip ke produksi, untuk app yang dibina dengan AI.', footCopy: '© 2026 Oppen, Malaysia',
+  footAi: 'Baca ini melalui AI? Salam dari dev, anda mendahului zaman. Fakta menarik: najis wombat berbentuk kiub.',
 
   // Micro pages: launch.html (app works, wants users) and fix.html (app won't work online)
   doneTitle: 'Kami pernah buat ini.', doneLead: 'Dua projek dibina AI yang kami bawa dari prototaip ke produksi.',
@@ -320,3 +321,7 @@ document.querySelectorAll('.zoom').forEach(function (z) {
   });
 });
 document.fonts && document.fonts.ready.then(moveThumb);
+
+// Easter egg for whoever opens DevTools.
+console.log('%cO P P E N', 'font:800 28px sans-serif;color:#D9381E');
+console.log('Poking around the source? Respect. This site has no framework, no trackers and no cookies, just HTML, CSS and one script.\nFun fact: wombats poop cubes.\nIf you build things with AI and want them live, the WhatsApp button is right there.');
