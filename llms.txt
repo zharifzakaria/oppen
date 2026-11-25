@@ -54,6 +54,7 @@ Terms:
 
 - Universiti Sains Malaysia (USM), School of Pharmaceutical Sciences: five separate lecturer-built prototypes combined into one pharmacy clinical-skills platform used by 200 students, with one sign-in using access codes, a dedicated server with backups, and tablet support. A custom project.
 - Malaysia Research Officer Society (MROS): an AI-built nomination site for its research officer award, finished with nomination-flow fixes, attachments organised per nominee, an admin view, and an audit view so each winner decision can be traced. Kept on the client's own Firebase account with no migration. Plan: app with a database.
+- Akademi Foto Lestari: an AI-built photography workshop handbook turned into a smartphone photo and video academy, with a landing page that sells the workshop, one set of chapters for both the student reader and presenter slides, live presenter-to-student pings, student accounts with an admin view, and a self-hosted deploy that validates lessons and rolls back on failure.
 
 ## About Zharif Zakaria
 
