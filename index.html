@@ -105,11 +105,20 @@
 
 <section id="work" aria-labelledby="case-title">
 <div class="wrap">
+<div class="cases-head">
+<h2 id="case-title" class="display" data-i18n="navWork">Case studies</h2>
+<div class="cases-nav">
+<button type="button" class="btn btn-line" data-case="-1" aria-label="Previous case study" data-i18n-aria="casePrev"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+<span class="cases-count" aria-live="polite"><b data-case-now>1</b> / 3</span>
+<button type="button" class="btn btn-line" data-case="1" aria-label="Next case study" data-i18n-aria="caseNext"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+</div>
+</div>
+<div class="cases" tabindex="0">
 <article class="case">
 <div class="case-intro">
 <div class="stack">
 <p class="label" data-i18n="c1Label">Case study: Pharmacy skills platform</p>
-<h2 id="case-title" class="display" data-i18n="c1Title">Five prototypes. One platform for 200 students.</h2>
+<h3 class="display" data-i18n="c1Title">Five prototypes. One platform for 200 students.</h3>
 <p class="lead" data-i18n="c1Lead">The School of Pharmaceutical Sciences at <strong class="client">Universiti Sains Malaysia (USM)</strong> wanted pharmacy students to practise clinical skills through guided case studies. The lecturer had already built each learning module as its own prototype. They worked, but they lived apart.</p>
 </div>
 <div class="zoom"><img src="case-pharmacy.webp" width="1600" height="1000" loading="lazy" alt="Student views of the PharmCare Skills platform: dashboard, learning modules and step-by-step case studies" aria-label="Student views of the PharmCare Skills platform: dashboard, learning modules and step-by-step case studies" data-i18n-aria="c1Shot"></div>
@@ -189,6 +198,12 @@
 </div>
 </div>
 </article>
+</div>
+<nav class="cases-tabs" aria-label="Case studies" data-i18n-aria="navWork">
+<button type="button" data-case-go="0"><span>01</span>USM</button>
+<button type="button" data-case-go="1"><span>02</span>MROS</button>
+<button type="button" data-case-go="2"><span>03</span>Akademi Foto Lestari</button>
+</nav>
 </div>
 </section>
 

@@ -22,6 +22,7 @@ var MS = {
   proofLead: 'Laman ini berjalan atas setup yang sama seperti yang kami beri kepada klien. Setiap angka di bawah datang dari alat awam. Tekan satu untuk uji sendiri.',
   pr1: 'Uptime sejak dilancarkan', pr1b: 'Uptime, 30 hari terakhir', pr2: 'Purata respons', pr3: 'Setup HTTPS', pr4: 'Header keselamatan', pr5: 'Skor keselamatan web', pr6: 'Kelajuan dan aksesibiliti', pr7: 'Penjejak dan cookies',
   prOurs: 'Status page kami', prOurs2: 'Status page kami', grade1: 'B', grade2: 'A', grade3: 'A+', score: '93 / 95', statusLive: 'Status langsung:',
+  casePrev: 'Kajian kes sebelumnya', caseNext: 'Kajian kes seterusnya',
   c1Label: 'Kajian kes: Platform kemahiran farmasi',
   c1Title: 'Lima prototaip. Satu platform untuk 200 pelajar.',
   c1Lead: 'Pusat Pengajian Sains Farmasi, <strong class="client">Universiti Sains Malaysia (USM)</strong> mahu pelajar farmasi berlatih kemahiran klinikal melalui kajian kes berpandu. Pensyarah sudah membina setiap modul pembelajaran sebagai prototaip tersendiri. Semuanya berfungsi, tapi berasingan.',
@@ -82,9 +83,10 @@ var MS = {
   footAi: 'Baca ini melalui AI? Salam dari dev, anda mendahului zaman. Fakta menarik: najis wombat berbentuk kiub.',
 
   // Micro pages: launch.html (app works, wants users) and fix.html (app won't work online)
-  doneTitle: 'Kami pernah buat ini.', doneLead: 'Dua projek dibina AI yang kami bawa dari prototaip ke produksi.',
+  doneTitle: 'Kami pernah buat ini.', doneLead: 'Tiga projek yang kami bawa dari prototaip ke produksi.',
   done1: '<strong>Universiti Sains Malaysia (USM)</strong><span>Lima prototaip yang dibina pensyarah, disatukan menjadi satu platform kemahiran farmasi yang digunakan 200 pelajar. Projek khas.</span>',
   done2: '<strong>Malaysia Research Officer Society (MROS)</strong><span>Laman pencalonan dibina AI, disiapkan dengan pengurusan lampiran, paparan admin dan jejak audit untuk penjurian. Pelan: app dengan database.</span>',
+  done3: '<strong>Akademi Foto Lestari</strong><span>Pelajaran fotografi dalam Bahasa Melayu, dijadikan akademi dengan laman jualan, kelas langsung dan akaun pelajar. Projek khas.</span>',
   doneLink: 'Baca kajian kes',
   lTitle: 'Oppen — Bagi orang guna app yang anda bina dengan AI',
   lEyebrow: 'Pelancaran dan sokongan app AI', lH1a: 'Anda dah bina app dengan AI.', lH1b: 'Sekarang biar orang lain guna.',
@@ -328,6 +330,33 @@ document.querySelectorAll('.zoom').forEach(function (z) {
     z.style.setProperty('--zy', (e.clientY - r.top) / r.height * 100 + '%');
   });
 });
+
+// Case study carousel: buttons step one slide, counter follows the scroll.
+(function () {
+  var track = document.querySelector('.cases'), now = document.querySelector('[data-case-now]'), btns = document.querySelectorAll('[data-case]');
+  function step() { return track.children[1].offsetLeft - track.children[0].offsetLeft; }
+  function idx() { return Math.round(track.scrollLeft / step()); }
+  function sync() {
+    var i = idx();
+    now.textContent = i + 1;
+    btns[0].disabled = i === 0;
+    btns[1].disabled = i === track.children.length - 1;
+    tabs.forEach(function (t, n) { t.setAttribute('aria-current', String(n === i)); });
+  }
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () { track.scrollBy({ left: b.dataset.case * step() }); });
+  });
+  // Bottom tabs: jump to a case and bring the reader back to the top of the section.
+  var tabs = document.querySelectorAll('[data-case-go]');
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      track.scrollTo({ left: t.dataset.caseGo * step() });
+      document.getElementById('work').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  });
+  track.addEventListener('scroll', sync, { passive: true });
+  sync();
+})();
 document.fonts && document.fonts.ready.then(moveThumb);
 
 // Easter egg for whoever opens DevTools.
